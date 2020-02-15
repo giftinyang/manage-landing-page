@@ -54,4 +54,46 @@ function displayTwo() {
     testItemFour.classList.remove('display-testimonial')
 }
 
+function displayThree() {
+    testItemThree.classList.add('display-testimonial')
+
+
+    testItemTwo.classList.remove('display-testimonial')
+    testItemOne.classList.remove('display-testimonial')
+    testItemFour.classList.remove('display-testimonial')
+}
+
+function displayFour() {
+    testItemFour.classList.add('display-testimonial')
+
+
+    testItemTwo.classList.remove('display-testimonial')
+    testItemThree.classList.remove('display-testimonial')
+    testItemOne.classList.remove('display-testimonial')
+}
+
+
+//VALIDATE EMAIL 
+
+const inputField = document.querySelector('.input')
+const btnSubmit = document.querySelector('.submit-mail')
+
+
+
+btnSubmit.addEventListener('click', ValidateEmail)
+
+
+function ValidateEmail(e) {
+     
+    e.preventDefault();
+    const errorMsg = document.querySelector('.error-msg')
+    setTimeout(() => {errorMsg.style.display ="none"}, 5000);
+
+   if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(inputField.value)) {
+       inputField.value =''
+   } else {
+       errorMsg.style.display = "block";
+   }
+}
+
 
